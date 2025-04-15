@@ -9,6 +9,8 @@ package com.fate;
  * 4. list fiados
  * 5. update prices
  * 6.delete prices
+ * 7. filter by client name
+ * 8. filter by item
  */
 public class FiadosRepository {
     public void insert() {}
