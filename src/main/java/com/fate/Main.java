@@ -2,6 +2,10 @@ package com.fate;
 
 import java.sql.*;
 
+/**
+ * PARA PUSHEAR. Primero commit, luego Push
+ * PARA ACTUALIZAR REPO LOCAL: Primero actualizar todo (fetch), y luego hacer update al repo local.
+ */
 // TODO: Implement Fiados Respository
 public class Main {
         public static void main(String[] args) throws SQLException {
