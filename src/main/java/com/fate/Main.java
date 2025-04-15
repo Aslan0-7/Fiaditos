@@ -3,6 +3,11 @@ package com.fate;
 import java.sql.*;
 
 /**
+ * TAREA. Implementar los metodos en FiadosRepository para insertar un nuevo cliente,
+ * mover el codigo para insertar a esa clase y usarla desde main
+ */
+
+/**
  * PARA PUSHEAR. Primero commit, luego Push
  * PARA ACTUALIZAR REPO LOCAL: Primero actualizar todo (fetch), y luego hacer update al repo local.
  */
