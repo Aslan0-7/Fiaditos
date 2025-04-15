@@ -13,5 +13,8 @@ package com.fate;
  * 8. filter by item
  */
 public class FiadosRepository {
-    public void insert() {}
+    public void addClient() {
+        System.out.println("Hola,estoy probando nada mas :c");
+    }
+
 }

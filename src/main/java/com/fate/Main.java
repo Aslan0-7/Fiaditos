@@ -2,7 +2,7 @@ package com.fate;
 
 import java.sql.*;
 
-/**
+/*
  * TAREA. Implementar los metodos en FiadosRepository para insertar un nuevo cliente,
  * mover el codigo para insertar a esa clase y usarla desde main
  */
@@ -51,7 +51,10 @@ public class Main {
                 }*/
             }
 
-            try (Statement stmt3 = conn.createStatement()) {
+            FiadosRepository a = new FiadosRepository();
+            a.addClient();
+
+            /* try (Statement stmt3 = conn.createStatement()) {
                 stmt3.executeUpdate("UPDATE fiados SET producto = 'atun' WHERE cliente = 'Aslan'");
                 stmt3.executeUpdate("UPDATE fiados SET precioventa = 2.50 WHERE producto = 'atun'");
                 stmt3.executeUpdate("UPDATE fiados SET cantidad = 4 WHERE producto = 'atun'");
@@ -71,6 +74,8 @@ public class Main {
                     System.out.println(cliente + " compro: " + producto + " va a pagar: " + total);
                 }
             }
+
+             */
         }
 }
 
