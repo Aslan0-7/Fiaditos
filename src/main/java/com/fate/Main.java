@@ -31,7 +31,9 @@ public class Main {
                     }
                 }
 
-                /*try (Statement stmt3 = conn.createStatement()) {
+                /*
+
+                    try (Statement stmt3 = conn.createStatement()) {
                     stmt3.executeUpdate("INSERT INTO fiados(id, cliente) VALUES(55,'Kisame')");
                     stmt3.executeUpdate("INSERT INTO fiados(id, cliente) VALUES(56,'Mitsuki')");
 
@@ -62,3 +64,5 @@ public class Main {
             }
         }
 }
+
+// New comentario
