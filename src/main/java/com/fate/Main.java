@@ -48,7 +48,7 @@ public class Main {
                 System.out.println("Un cliente fue eliminado de la tiendita :c");
 
             }
-
+//hola :D
             try (Statement stmt4 = conn.createStatement()) {
                 stmt4.executeUpdate("UPDATE fiados SET total = precioventa * cantidad");
                 ResultSet rs3 = stmt4.executeQuery("SELECT cliente,producto,total FROM fiados WHERE cliente = 'Aslan' ");
