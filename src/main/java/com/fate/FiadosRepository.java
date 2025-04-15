@@ -8,6 +8,7 @@ package com.fate;
  * 3. delete fiados
  * 4. list fiados
  * 5. update prices
+ * 6.delete prices
  */
 public class FiadosRepository {
     public void insert() {}
