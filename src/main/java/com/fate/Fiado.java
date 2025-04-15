@@ -19,4 +19,6 @@ public class Fiado {
     public void setAmount(Double amount) {
         this.amount = amount;
     }
+
+    //Faltan añadir mas metodos
 }
