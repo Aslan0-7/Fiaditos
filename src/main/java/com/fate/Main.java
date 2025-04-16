@@ -14,13 +14,19 @@ import java.sql.*;
 // TODO: Implement Fiados Respository
 public class Main {
         public static void main(String[] args) throws SQLException {
+
             String url = "jdbc:postgresql://db.yjuhnyxsbvfaynccywxr.supabase.co:5432/postgres";
             String user = "postgres";
             String password = "Batranca2025#";
 
             Connection conn = DriverManager.getConnection(url, user, password);
 
-            try (Statement stmt = conn.createStatement();
+            FiadosRepository nuevo = new FiadosRepository(conn);
+            nuevo.addClient(28, "Mitsuki");
+
+            nuevo.deleteClient(3);
+
+            /* try (Statement stmt = conn.createStatement();
                  ResultSet rs = stmt.executeQuery("SELECT * FROM fiados")) {
 
                 while (rs.next()) {
@@ -51,10 +57,9 @@ public class Main {
                 }*/
             }
 
-            FiadosRepository a = new FiadosRepository();
-            a.addClient();
 
-            /* try (Statement stmt3 = conn.createStatement()) {
+
+           /* try (Statement stmt3 = conn.createStatement()) {
                 stmt3.executeUpdate("UPDATE fiados SET producto = 'atun' WHERE cliente = 'Aslan'");
                 stmt3.executeUpdate("UPDATE fiados SET precioventa = 2.50 WHERE producto = 'atun'");
                 stmt3.executeUpdate("UPDATE fiados SET cantidad = 4 WHERE producto = 'atun'");
@@ -74,9 +79,9 @@ public class Main {
                     System.out.println(cliente + " compro: " + producto + " va a pagar: " + total);
                 }
             }
+        }*/
 
-             */
-        }
+
 }
 
 // New comentario
