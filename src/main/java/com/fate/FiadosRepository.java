@@ -18,8 +18,8 @@ import java.sql.SQLException;
  * 8. filter by item
  */
 public class FiadosRepository {
+//Para no olvidarme: este codigo de abajito es para mantener y poder usar la conexion con mi base de datos
     private Connection conn;
-
     public FiadosRepository(Connection conn) {
         this.conn = conn;
     }
@@ -42,6 +42,21 @@ public class FiadosRepository {
             System.out.println("Se elimino a: "+ cliente+ " de la tiendita porque no pagaba a tiempo :c");
         }
     }
+
+    public void updateFiados (String cliente, String categoria, String producto, Integer cantidad,Double precioventa ) throws SQLException {
+        String sql = "UPDATE fiados SET categoria = ?, producto = ?,cantidad = ?,precioventa = ?  where cliente= ?";
+        try (PreparedStatement  pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, categoria);
+            pstmt.setString(2, producto);
+            pstmt.setInt(3, cantidad);
+            pstmt.setDouble(4, precioventa);
+            pstmt.setString(5, cliente);
+            pstmt.executeUpdate();
+            System.out.println("Se actualizaron los fiados de: " +cliente+ " en la tiendita \n"+"Categoria: "+ categoria + "\n"+"Producto: "+ producto+"\n"+"Cantidad: "+ cantidad+ "\n"+"Precio: "+ precioventa);
+        }
+    }
+
+
 // Aqui intente hacer algo con lo que aprendi en mis clases
 
     public void añadirCliente () throws SQLException {
