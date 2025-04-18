@@ -22,8 +22,10 @@ public class Main {
             Connection conn = DriverManager.getConnection(url, user, password);
 
             FiadosRepository metodos = new FiadosRepository(conn);
-            metodos.addClient(111, "Franchesca");
-            metodos.deleteClient("Haziz");
+            //metodos.addClient(111, "Franchesca");
+            //metodos.deleteClient("Haziz");
+
+            metodos.añadirCliente();
 
 
 
