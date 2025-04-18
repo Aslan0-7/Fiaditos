@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /***
  * This class is the responsible for the interaction with the database
@@ -24,7 +23,6 @@ public class FiadosRepository {
     public FiadosRepository(Connection conn) {
         this.conn = conn;
     }
-
     public void addClient(Integer id , String cliente) throws SQLException {
         String sql = "INSERT INTO fiados(id, cliente) VALUES(?, ?)";
         try (PreparedStatement  pstmt = conn.prepareStatement(sql)) {
@@ -42,6 +40,19 @@ public class FiadosRepository {
             pstmt.executeUpdate();
 
             System.out.println("Se elimino a: "+ cliente+ " de la tiendita porque no pagaba a tiempo :c");
+        }
+    }
+// Aqui intente hacer algo con lo que aprendi en mis clases
+
+    public void añadirCliente () throws SQLException {
+        String sql = "INSERT INTO fiados(id, cliente) VALUES(?, ?)";
+        try (PreparedStatement  pstmt = conn.prepareStatement(sql)) {
+            int id = Integer.parseInt(JOptionPane.showInputDialog("Igresa el id del cliente: "));
+            String cliente = String.valueOf(JOptionPane.showInputDialog("Ingresa el nombre del cliente: "));
+            pstmt.setInt(1, id);
+            pstmt.setString(2, cliente);
+            pstmt.executeUpdate();
+            System.out.println("Se añadió el cliente " + cliente + " a la tiendita :D");
         }
     }
 }
