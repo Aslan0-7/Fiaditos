@@ -21,10 +21,11 @@ public class Main {
 
             Connection conn = DriverManager.getConnection(url, user, password);
 
-            FiadosRepository nuevo = new FiadosRepository(conn);
-            nuevo.addClient(28, "Mitsuki");
+            FiadosRepository metodos = new FiadosRepository(conn);
+            metodos.addClient(111, "Franchesca");
+            metodos.deleteClient("Haziz");
 
-            nuevo.deleteClient(3);
+
 
             /* try (Statement stmt = conn.createStatement();
                  ResultSet rs = stmt.executeQuery("SELECT * FROM fiados")) {
