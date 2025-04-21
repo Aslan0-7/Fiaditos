@@ -15,19 +15,15 @@ import java.sql.*;
 public class Main {
         public static void main(String[] args) throws SQLException {
 
-            String url = "jdbc:postgresql://db.yjuhnyxsbvfaynccywxr.supabase.co:5432/postgres";
-            String user = "postgres";
-            String password = "Batranca2025#";
+            DbConnector db = new DbConnector();
+            Connection conn = db.getConnection();
+            FiadosRepository metodos = new FiadosRepository((DbConnector) conn);
 
-            Connection conn = DriverManager.getConnection(url, user, password);
 
-            FiadosRepository metodos = new FiadosRepository(conn);
             //metodos.addClient(111, "Franchesca");
             //metodos.deleteClient("Haziz");
-
             //metodos.añadirCliente();
-
-            metodos.updateFiados("Francheca", "bebidas", "CocaCola 1L",4,4.50);
+            //metodos.updateFiados("Francheca", "bebidas", "CocaCola 1L",4,4.50);
 
 
 

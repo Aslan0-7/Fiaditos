@@ -19,10 +19,12 @@ import java.sql.SQLException;
  */
 public class FiadosRepository {
 //Para no olvidarme: este codigo de abajito es para mantener y poder usar la conexion con mi base de datos
-    private Connection conn;
-    public FiadosRepository(Connection conn) {
-        this.conn = conn;
+    public Connection conn;
+    public FiadosRepository(DbConnector conn) throws SQLException {
+        this.conn = conn.getConnection();
     }
+
+
     public void addClient(Integer id , String cliente) throws SQLException {
         String sql = "INSERT INTO fiados(id, cliente) VALUES(?, ?)";
         try (PreparedStatement  pstmt = conn.prepareStatement(sql)) {
