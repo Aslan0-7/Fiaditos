@@ -1,4 +1,6 @@
-package com.fate;
+package com.fate.viejo;
+
+import com.fate.DbConnector;
 
 import javax.swing.*;
 import java.sql.Connection;
@@ -17,10 +19,10 @@ import java.sql.SQLException;
  * 7. filter by client name
  * 8. filter by item
  */
-public class FiadosRepository {
+public class FiadosRepositoryViejo {
 //Para no olvidarme: este codigo de abajito es para mantener y poder usar la conexion con mi base de datos
     public Connection conn;
-    public FiadosRepository(DbConnector conn) throws SQLException {
+    public FiadosRepositoryViejo(DbConnector conn) throws SQLException {
         this.conn = conn.getConnection();
     }
 
