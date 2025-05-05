@@ -5,7 +5,9 @@ public class Main {
 
         FiadoEntity fiado = new FiadoEntity(1, "Federico", 10);
 
-        FiadoRepository fiadoRepository = new FiadoRepository();
+        DbConnector connector = new DbConnector();
+
+        FiadoRepository fiadoRepository = new FiadoRepository(connector);
 
         fiadoRepository.insert(fiado);
 

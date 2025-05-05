@@ -1,8 +1,6 @@
 package com.fate.injection;
 
 import com.fate.injection.armas.Arma;
-import com.fate.injection.armas.Cuchillo;
-import com.fate.injection.armas.Espada;
 import com.fate.injection.armas.Pistola;
 import com.fate.injection.guerreros.Guerrero;
 

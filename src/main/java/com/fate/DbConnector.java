@@ -4,9 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 public class DbConnector {
-    String url = "jdbc:postgresql://db.yjuhnyxsbvfaynccywxr.supabase.co:5432/postgres";
-    String user = "postgres";
-    String password = "Batranca2025#";
+    String url = "jdbc:postgresql://localhost:5432/mydatabase";
+    String user = "myuser";
+    String password = "secret";
 
     public Connection getConnection() throws SQLException {
         try {

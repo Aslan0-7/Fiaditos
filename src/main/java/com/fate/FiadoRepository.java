@@ -4,11 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-// Injection de depencias
-// Interfaces / Polimorfismo
 public class FiadoRepository {
 
-    private DbConnector dbConnector = new DbConnector();
+    private DbConnector dbConnector;
+
+    public FiadoRepository(DbConnector dbConnector) {
+        this.dbConnector = dbConnector;
+    }
 
     public void insert(FiadoEntity fiado) {
         try  {
