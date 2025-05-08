@@ -2,6 +2,7 @@ package com.fate;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class FiadoRepository {
@@ -25,6 +26,39 @@ public class FiadoRepository {
             System.out.println("Ocurrio un error");
             throw new RuntimeException(e);
         }
-
     }
+
+    public void delete(FiadoEntity fiado){
+        try {
+            String sql = "DELETE FROM fiados WHERE cliente = ?";
+            Connection conn = dbConnector.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, fiado.getCliente());
+            stmt.executeUpdate();
+            System.out.println("Se elimino a  "+ fiado.getCliente() + " de nuestra tiendita :C");
+
+        } catch (SQLException e) {
+            System.out.println("No se pudo eliminar al cliente");
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void list(FiadoEntity fiado){
+        try {
+            String sql = "SELECT id, cliente FROM fiados";
+            Connection conn = dbConnector.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Integer id = rs.getInt("id");
+                String cliente = rs.getString("cliente");
+                System.out.println("ID: " + id + "Nombre del cliente: " + cliente);
+            }
+        } catch (SQLException e) {
+            System.out.println("No se pudo mostrar la lista de clientes :C");
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }
