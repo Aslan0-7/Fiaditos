@@ -43,7 +43,7 @@ public class FiadoRepository {
         }
     }
 
-    public void list(FiadoEntity fiado){
+    public void list(){
         try {
             String sql = "SELECT id, cliente FROM fiados";
             Connection conn = dbConnector.getConnection();
@@ -52,13 +52,12 @@ public class FiadoRepository {
             while (rs.next()) {
                 Integer id = rs.getInt("id");
                 String cliente = rs.getString("cliente");
-                System.out.println("ID: " + id + "Nombre del cliente: " + cliente);
+                System.out.println("ID: " + id + " Nombre del cliente: " + cliente);
             }
         } catch (SQLException e) {
             System.out.println("No se pudo mostrar la lista de clientes :C");
             throw new RuntimeException(e);
         }
     }
-
 
 }
