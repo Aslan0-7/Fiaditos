@@ -15,7 +15,7 @@ public class FiadoRepository {
 
     public void insert(FiadoEntity fiado) {
         try  {
-            String sql = "INSERT INTO fiados(id, cliente, categoria, producto, unidad, precioventa, total, estado) VALUES(?, ?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO fiados(id, cliente) VALUES(?, ?)";
             Connection conn = dbConnector.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, fiado.getId());

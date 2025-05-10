@@ -25,7 +25,6 @@ public class Main {
                 System.out.println("Hola!! Vamos a añadir un cliente a la tiendita :D ");
                 System.out.println("Ingresa el id del cliente: ");
                 int id = Integer.parseInt(scanner.nextLine());
-
                 System.out.println("Ahora ingresa el nombre del cliente: ");
                 String cliente =  scanner.nextLine();
                 FiadoEntity fiado = new FiadoEntity(id, cliente);
@@ -34,10 +33,10 @@ public class Main {
             }else if (opcion == 2) {
                 System.out.println("Hola...Vamos a eliminar a un cliente de la tiendita :C");
                 System.out.println("Ingresa el id del cliente: ");
-                int ide= Integer.parseInt(scanner.nextLine());
+                int id= Integer.parseInt(scanner.nextLine());
                 System.out.println("Ahora ingresa el nombre del cliente: ");
                 String cliente= scanner.nextLine();
-                FiadoEntity fiado = new FiadoEntity(ide, cliente);
+                FiadoEntity fiado = new FiadoEntity(id, cliente);
                 metodos.delete(fiado);
 
             }else if (opcion == 3) {
